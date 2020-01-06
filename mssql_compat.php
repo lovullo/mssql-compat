@@ -315,7 +315,7 @@ if(!function_exists('mssql_connect')) {
     }
 
     public function freeStmt($stmt) {
-      $stmt = &$this->getStmtObj($stmt, TRUE);
+      $stmt_index = &$this->getStmtObj($stmt, TRUE);
       unset($this->stmt_pool[$stmt_index]);
       return TRUE;
     }
